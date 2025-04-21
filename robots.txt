@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://three-dimensions-labs.github.io/sitemap.xml
+Sitemap: https://alshedivat.github.io//sitemap.xml
