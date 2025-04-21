@@ -1,6 +1,6 @@
 ---
 layout: page
-title: project 7
+title: Full Stack Hello World Voting Ethereum Dapp Tutorial
 description: with background image
 img: assets/img/4.jpg
 importance: 1

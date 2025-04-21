@@ -1,6 +1,6 @@
 ---
 layout: page
-title: project 6
+title: Build Your First Blockchain App Using Ethereum Smart Contracts and Solidity
 description: a project with no image
 img:
 importance: 4

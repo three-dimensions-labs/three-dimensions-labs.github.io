@@ -1,85 +1,48 @@
-require "active_support/all"
 require 'nokogiri'
 require 'open-uri'
-
-module Helpers
-  extend ActiveSupport::NumberHelper
-end
+require 'uri'
 
 module Jekyll
-  class GoogleScholarCitationsTag < Liquid::Tag
-    Citations = { }
-
-    def initialize(tag_name, params, tokens)
+  class GoogleScholarCitations < Liquid::Tag
+    def initialize(tag_name, text, tokens)
       super
-      splitted = params.split(" ").map(&:strip)
-      @scholar_id = splitted[0]
-      @article_id = splitted[1]
-
-      if @scholar_id.nil? || @scholar_id.empty?
-        puts "Invalid scholar_id provided"
-      end
-
-      if @article_id.nil? || @article_id.empty?
-        puts "Invalid article_id provided"
-      end
+      @text = text.strip
     end
 
     def render(context)
-      article_id = context[@article_id.strip]
-      scholar_id = context[@scholar_id.strip]
-      article_url = "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=#{scholar_id}&citation_for_view=#{scholar_id}:#{article_id}"
-
+      # Parse the parameters
+      params = @text.split(' ')
+      scholar_userid = context[params[0]] || params[0]
+      citation_id = context[params[1]] || params[1]
+      
       begin
-          # If the citation count has already been fetched, return it
-          if GoogleScholarCitationsTag::Citations[article_id]
-            return GoogleScholarCitationsTag::Citations[article_id]
-          end
-
-          # Sleep for a random amount of time to avoid being blocked
-          sleep(rand(1.5..3.5))
-
-          # Fetch the article page
-          doc = Nokogiri::HTML(URI.open(article_url, "User-Agent" => "Ruby/#{RUBY_VERSION}"))
-
-          # Attempt to extract the "Cited by n" string from the meta tags
-          citation_count = 0
-
-          # Look for meta tags with "name" attribute set to "description"
-          description_meta = doc.css('meta[name="description"]')
-          og_description_meta = doc.css('meta[property="og:description"]')
-
-          if !description_meta.empty?
-            cited_by_text = description_meta[0]['content']
-            matches = cited_by_text.match(/Cited by (\d+[,\d]*)/)
-
-            if matches
-              citation_count = matches[1].sub(",", "").to_i
-            end
-
-          elsif !og_description_meta.empty?
-            cited_by_text = og_description_meta[0]['content']
-            matches = cited_by_text.match(/Cited by (\d+[,\d]*)/)
-
-            if matches
-              citation_count = matches[1].sub(",", "").to_i
-            end
-          end
-
-        citation_count = Helpers.number_to_human(citation_count, :format => '%n%u', :precision => 2, :units => { :thousand => 'K', :million => 'M', :billion => 'B' })
-
-      rescue Exception => e
-        # Handle any errors that may occur during fetching
-        citation_count = "N/A"
-
-        # Print the error message including the exception class and message
-        puts "Error fetching citation count for #{article_id} in #{article_url}: #{e.class} - #{e.message}"
+        # Return a default value if no citation_id is provided
+        return "0" if citation_id.nil? || citation_id.empty?
+        
+        # Build the URL for the Google Scholar citation
+        url = "https://scholar.google.com/citations?user=#{scholar_userid}&view_op=view_citation&citation_for_view=#{citation_id}"
+        
+        # Use a simple cache to avoid repeatedly fetching the same citation
+        @@citation_cache ||= {}
+        cache_key = "#{scholar_userid}-#{citation_id}"
+        
+        # Return cached value if available
+        return @@citation_cache[cache_key] if @@citation_cache.key?(cache_key)
+        
+        # Fetch and parse the citation page
+        doc = Nokogiri::HTML(URI.open(url))
+        citation_count = doc.css('.gsc_oci_value').detect { |el| el.previous_element.text.include?('Citations') }
+        citation_text = citation_count ? citation_count.text.strip : "0"
+        
+        # Cache the result
+        @@citation_cache[cache_key] = citation_text
+        return citation_text
+      rescue => e
+        puts "Error fetching Google Scholar citation: #{e.message}"
+        return "0"
       end
-
-      GoogleScholarCitationsTag::Citations[article_id] = citation_count
-      return "#{citation_count}"
     end
   end
 end
 
-Liquid::Template.register_tag('google_scholar_citations', Jekyll::GoogleScholarCitationsTag)
+Liquid::Template.register_tag('google_scholar_citations', Jekyll::GoogleScholarCitations) 

@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /blog/
-title: blog
+title: Blog
 nav: true
 nav_order: 1
 pagination:
@@ -28,6 +28,8 @@ pagination:
     <h2>{{ site.blog_description }}</h2>
   </div>
   {% endif %}
+
+{% include blog_search.liquid %}
 
 {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
 
@@ -194,3 +196,7 @@ pagination:
 {% endif %}
 
 </div>
+
+<link rel="stylesheet" href="{{ '/assets/css/blog-search.css' | relative_url }}">
+<script src="{{ '/assets/js/blog-search.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/search-debug.js' | relative_url }}"></script>

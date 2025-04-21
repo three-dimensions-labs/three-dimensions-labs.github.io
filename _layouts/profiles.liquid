@@ -4,33 +4,37 @@ layout: page
 <div class="post">
   <article>
     {% if page.profiles %}
+      <div class="team-grid">
       {% for profile in page.profiles %}
-        <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+        <div class="team-member">
           {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+            <div class="team-member-image">
+              {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+              {% if profile.image_circular %}
+                {% assign profile_image_class = 'team-member-img rounded-circle' %}
+              {% else %}
+                {% assign profile_image_class = 'team-member-img' %}
+              {% endif %}
+              {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class alt=profile.name %}
+            </div>
+          {% endif %}
+          
+          <div class="team-member-data">
+            {% if profile.name %}
+              <h3 class="team-member-name">{{ profile.name }}</h3>
             {% endif %}
-            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
-        </div>
-
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
+            
+            {% if profile.role %}
+              <div class="team-member-role">{{ profile.role }}</div>
+            {% endif %}
+            
+            {% if profile.info %}
+              <div class="team-member-info">{{ profile.info }}</div>
+            {% endif %}
+          </div>
         </div>
       {% endfor %}
+      </div>
     {% endif %}
   </article>
 </div>

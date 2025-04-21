@@ -1,6 +1,6 @@
 ---
 layout: page
-title: project 9
+title: Blockchain Developers Essentials
 description: another project with an image 🎉
 img: assets/img/6.jpg
 importance: 4

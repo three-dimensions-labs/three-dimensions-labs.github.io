@@ -1,6 +1,6 @@
 ---
 layout: page
-title: project 1
+title: Introduction to block chain
 description: with background image
 img: assets/img/12.jpg
 importance: 1

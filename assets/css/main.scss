@@ -8,9 +8,11 @@ $max-content-width: {{ site.max_width }};
 
 @import
   "variables",
+  "mixins",
   "themes",
   "layout",
   "base",
+  "carousel",
   "distill",
   "cv",
   "tabs",

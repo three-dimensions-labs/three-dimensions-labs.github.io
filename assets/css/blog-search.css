@@ -1,0 +1,127 @@
+/* Blog Search Styles */
+.blog-search-container {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.blog-search-input-group {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#blog-search-input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-right: none;
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#blog-search-input:focus {
+  border-color: var(--global-theme-color);
+}
+
+#blog-search-clear {
+  background: none;
+  border: 1px solid #ddd;
+  border-left: none;
+  padding: 0 15px;
+  color: #777;
+  cursor: pointer;
+  background-color: var(--global-bg-color);
+}
+
+#blog-search-clear:hover {
+  color: var(--global-theme-color);
+}
+
+#blog-search-submit {
+  background-color: var(--global-theme-color);
+  color: white;
+  border: none;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#blog-search-submit:hover {
+  background-color: var(--global-hover-color);
+}
+
+#blog-search-results {
+  margin-top: 1.5rem;
+  display: none;
+}
+
+.search-no-results {
+  padding: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--global-text-color-light);
+}
+
+/* Loading indicator */
+#blog-search-loading {
+  display: none;
+  margin: 1.5rem auto;
+  text-align: center;
+  color: var(--global-text-color);
+}
+
+#blog-search-loading .spinner-border {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Error message styling */
+.alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Highlight search terms */
+.search-highlight {
+  background-color: rgba(255, 213, 0, 0.3);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blog-search-container {
+    margin: 1rem 0;
+  }
+  
+  #blog-search-input {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  #blog-search-clear,
+  #blog-search-submit {
+    padding: 0 12px;
+  }
+}
+
+/* Console debugging message */
+.blog-search-container::after {
+  content: "Blog search styles loaded";
+  display: none;
+} 

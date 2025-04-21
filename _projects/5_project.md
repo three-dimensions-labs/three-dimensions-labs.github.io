@@ -1,6 +1,6 @@
 ---
 layout: page
-title: project 5
+title: Blockchain for Business - An Introduction to Hyperledger Technologies
 description: a project with a background image
 img: assets/img/1.jpg
 importance: 3

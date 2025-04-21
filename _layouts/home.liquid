@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+        {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+  </header>
+
+  <article>
+    <div class="clearfix home-container">
+      <div class="home-body">
+        <div class="home-body-content">
+          {{ content }}
+        </div>
+
+
+        <!-- News -->
+        {% if page.announcements and page.announcements.enabled %}
+          <hr>
+
+          <h2>
+            <a class="font-weight-bold" href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+          </h2>
+          {% include news.liquid limit=true %}
+        {% endif %}
+
+        <!-- Latest posts -->
+        {% if page.latest_posts and page.latest_posts.enabled %}
+          <hr>
+
+          <h2>
+            <a class="font-weight-bold" href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
+          </h2>
+          {% include latest_posts.liquid %}
+        {% endif %}
+
+        <!-- Social -->
+        {% if page.social %}
+          <hr>
+
+          <div class="social">
+            <div class="contact-icons">{% include social.liquid %}</div>
+
+            <div class="contact-note">{{ site.contact_note }}</div>
+          </div>
+        {% endif %}
+
+        {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+          {% include newsletter.liquid center=true %}
+        {% endif %}
+      </div>
+
+      {% if page.latest_articles %}
+        <div class="twitter-posts">
+          <h5 class="font-weight-bold">Recent Posts on X</h5>
+
+          {% for post in page.latest_articles %}
+          <div class="twitter-post" style="margin-bottom: 20px">
+            {{ post.embed_code }}
+          </div>
+          {% endfor %}
+
+          <!-- Twitter widget JS (must be at the bottom) -->
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charset="utf-8"
+          ></script>
+        </div>
+      {% endif %}
+    </div>
+  </article>
+</div>
