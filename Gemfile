@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
+ruby '~> 2.6.10'  # Explicitly specify the Ruby version to use
+
 gem 'jekyll', '~> 4.2'
 gem 'activesupport', '~> 6.0'
 
 # Core plugins that directly affect site building
 group :jekyll_plugins do
+    gem 'nokogiri', '~> 1.13.10'  # Version compatible with Ruby 2.6.10
     gem 'jekyll-archives-v2'
     gem 'jekyll-email-protect'
     gem 'jekyll-feed'

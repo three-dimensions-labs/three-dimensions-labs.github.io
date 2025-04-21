@@ -223,8 +223,12 @@ DEPENDENCIES
   jekyll-toc
   jekyll-twitter-plugin
   jemoji
+  nokogiri (~> 1.13.10)
   observer
   ostruct
+
+RUBY VERSION
+   ruby 2.6.10p210
 
 BUNDLED WITH
    2.3.26
