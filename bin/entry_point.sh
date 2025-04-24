@@ -14,13 +14,16 @@ manage_gemfile_lock() {
             git restore Gemfile.lock 2>/dev/null || true
         else
             echo "Gemfile.lock is not tracked by git, removing it"
-            rm Gemfile.lock
+#            rm Gemfile.lock
         fi
     fi
 }
 
 start_jekyll() {
     manage_gemfile_lock
+    echo "Installing Jekyll & dependencies"
+    bundle install
+    echo "Starting Jekyll server"
     bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload --verbose --trace --force_polling &
 }
 
