@@ -17,8 +17,7 @@ latest_posts:
   limit: 1 # leave blank to include all the blog posts
 
 latest_articles:
-  - embed_code: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Bro cooked☠️😂 <a href="https://t.co/qSp6tx1kTo">pic.twitter.com/qSp6tx1kTo</a></p>&mdash; The Driven Man (@The_DrivenMan) <a href="https://twitter.com/The_DrivenMan/status/1909973986219323616?ref_src=twsrc%5Etfw">April 9, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  - embed_code: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Bro cooked☠️😂 <a href="https://t.co/qSp6tx1kTo">pic.twitter.com/qSp6tx1kTo</a></p>&mdash; The Driven Man (@The_DrivenMan) <a href="https://twitter.com/The_DrivenMan/status/1909973986219323616?ref_src=twsrc%5Etfw">April 9, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  - embed_code: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are a team of scientists and engineers researching and implementing blockchain protocols.</p>&mdash; ThreeDimensionsLabs (@3DimensionsLabs) <a href="https://twitter.com/3DimensionsLabs/status/1916219744203469029?ref_src=twsrc%5Etfw">April 26, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 ---
 
 Welcome to **Three Dimensions Labs**, a pioneering research collective at the intersection of distributed systems,
