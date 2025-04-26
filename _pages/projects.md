@@ -2,10 +2,10 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Explore some of our ideas at Three Dimensions Labs.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [] #add some categories - blockchain, distributed system, security, etc
 horizontal: false
 ---
 
