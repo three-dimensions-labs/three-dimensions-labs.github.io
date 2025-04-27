@@ -1536,7 +1536,7 @@ figure.cover {
 // New Team Grid Layout
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 30px;
   margin-top: 30px;
 }
@@ -1552,7 +1552,7 @@ figure.cover {
     height: auto;
     border-radius: 5px;
     margin-bottom: 10px;
-    max-width: 120px;
+    max-width: 200px;
     margin-right: 2rem;
   }
 
