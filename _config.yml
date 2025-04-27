@@ -439,7 +439,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      fonts: "https://fonts.cdnfonts.com/css/cmu-serif"
   highlightjs:
     integrity:
       css:

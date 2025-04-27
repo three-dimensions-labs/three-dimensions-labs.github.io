@@ -20,6 +20,17 @@ latest_articles:
   - embed_code: <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We are a team of scientists and engineers researching and implementing blockchain protocols.</p>&mdash; ThreeDimensionsLabs (@3DimensionsLabs) <a href="https://twitter.com/3DimensionsLabs/status/1916219744203469029?ref_src=twsrc%5Etfw">April 26, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 ---
 
+<header markdown="0" class="post-header">
+  <h1 class="post-title">
+    {% if site.title == 'blank' %}
+      <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+      {{ site.last_name }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </h1>
+</header>
+
 Welcome to **Three Dimensions Labs**, a pioneering research collective at the intersection of distributed systems,
 cryptography, and economic mechanism design. Based at the [Digital Futures Institute](https://example.org), we're
 pushing the boundaries of what's possible in the decentralized world.
@@ -35,13 +46,13 @@ pushing the boundaries of what's possible in the decentralized world.
     <!-- Items -->
     <div class="carousel-inner" markdown="0">
         <div class="item active">
-            <img src="{{ site.url }}{{ site.baseurl }}assets/img/app_sec.jpg" alt="Slide 1" />
+            <img src="assets/img/app_sec.jpg" alt="Slide 1" />
         </div>
         <div class="item">
-            <img src="{{ site.url }}{{ site.baseurl }}assets/img/block_infra.jpg" alt="Slide 2" />
+            <img src="assets/img/block_infra.jpg" alt="Slide 2" />
         </div>
         <div class="item">
-            <img src="{{ site.url }}{{ site.baseurl }}assets/img/low_infra.jpg" alt="Slide 3" />
+            <img src="assets/img/low_infra.jpg" alt="Slide 3" />
         </div>
     </div>
 
@@ -54,6 +65,53 @@ pushing the boundaries of what's possible in the decentralized world.
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<script type="text/javascript">
+  // Direct bootstrap carousel initialization
+  (function() {
+    // Try multiple approaches to initialize the carousel
+    function initCarousel() {
+      try {
+        // Manual initialization with jQuery
+        if (window.jQuery && typeof jQuery.fn.carousel === 'function') {
+          jQuery('#carousel').carousel({
+            interval: 4000,
+            pause: 'hover'
+          });
+          console.log('Carousel initialized via jQuery plugin');
+          return true;
+        }
+        return false;
+      } catch(e) {
+        console.error('Error initializing carousel:', e);
+        return false;
+      }
+    }
+
+    // Try immediately
+    if (!initCarousel()) {
+      // Try again when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        if (!initCarousel()) {
+          // Try one more time after a delay
+          setTimeout(initCarousel, 2000);
+        }
+      });
+      
+      // Also try when window is fully loaded
+      window.addEventListener('load', function() {
+        setTimeout(initCarousel, 500);
+      });
+    }
+  })();
+</script>
+
+<!-- Additional jQuery direct handler for carousel -->
+<script>
+document.write('<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"><\/script>');
+document.write('<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"><\/script>');
+document.write('<script>jQuery(document).ready(function($) { $("#carousel").carousel({interval: 4000, pause: "hover"}); });<\/script>');
+</script>
 
 ### Our Mission
 

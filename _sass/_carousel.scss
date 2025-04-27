@@ -189,15 +189,19 @@
   padding-left: 0;
   list-style: none;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 
   li {
     display: inline-block;
-    width:  10px;
-    height: 10px;
+    width:  5px;
+    height: 5px;
     margin: 1px;
     text-indent: -999px;
     border: 1px solid $carousel-indicator-border-color;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
 
     // IE8-9 hack for event handling

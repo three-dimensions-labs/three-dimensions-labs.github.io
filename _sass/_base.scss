@@ -17,7 +17,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-family: "Source Sans 3", sans-serif;
+  font-family:  'CMU Serif', sans-serif;
   font-optical-sizing: auto;
 }
 
@@ -1501,7 +1501,7 @@ figure.cover {
 
 .home-body {
   display: flex;
-  flex-grow: 1;
+  flex: 1 1 0%;
   flex-direction: column;
   gap: 20px;
 }
@@ -1514,7 +1514,7 @@ figure.cover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 500px;
+  width: 320px;
 
   h4 {
     margin-top: 0;
@@ -1661,4 +1661,16 @@ figure.cover {
 .project-category {
   text-transform: capitalize;
   text-align: left;
+}
+
+.app-logo {
+  height: 40px;
+  width: 40px;
+  margin: 0;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 }
