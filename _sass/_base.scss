@@ -1547,6 +1547,11 @@ figure.cover {
   align-items: start;
   margin-bottom: 30px;
 
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .team-member-image {
     width: 100%;
     height: auto;
@@ -1554,11 +1559,16 @@ figure.cover {
     margin-bottom: 10px;
     max-width: 200px;
     margin-right: 2rem;
+
+    @media (max-width: 480px) {
+      max-width: none;
+      margin-right: 0;
+    }
   }
 
   .team-member-data {
     display: flex;
-    flex-grow: 1;
+    flex: 1 1 0%;
     flex-direction: column;
     justify-content: center;
   }
