@@ -29,8 +29,6 @@ pagination:
   </div>
   {% endif %}
 
-{% include blog_search.liquid %}
-
 {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
 
   <div class="tag-category-list">
