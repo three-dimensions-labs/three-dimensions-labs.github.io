@@ -31,9 +31,8 @@ latest_articles:
   </h1>
 </header>
 
-Welcome to **Three Dimensions Labs**, a pioneering research collective at the intersection of distributed systems,
-cryptography, and economic mechanism design. Based at the [Digital Futures Institute](https://example.org), we're
-pushing the boundaries of what's possible in the decentralized world.
+Welcome to **Three Dimensions Labs**, a research collective focused on advancing knowledge and tools in blockchain
+infrastructure, distributed systems, and application security.
 
 <div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="hover" >
     <!-- Menu -->
@@ -115,52 +114,59 @@ document.write('<script>jQuery(document).ready(function($) { $("#carousel").caro
 
 ### Our Mission
 
-We explore three fundamental research pillars:
+Our aim is to explore three fundamental dimensions of research:
 
-1. **Scaling Blockchain Infrastructure** - Developing layer-1 and layer-2 solutions that address the blockchain trilemma
-   of security, decentralization, and scalability.
+1. **Blockchain Infrastructure** - Researching and developing solutions that address key blockchain infrastructure
+   challenges in the areas of security, decentralization, and scalability.
 
-2. **Zero-Knowledge Applications** - Creating privacy-preserving protocols and applications using zero-knowledge proofs
-   that maintain transparency while protecting sensitive data.
+2. **Distributed Systems** - Exploring the distributed protocols and infrastructure that underpin blockchain systems,
+   including consensus mechanisms, peer-to-peer networking, data availability layers, distributed data stores, and
+   synchronization techniques.
 
-3. **Tokenomics & Governance Systems** - Designing economic models and governance frameworks that align incentives
-   across decentralized networks and foster sustainable ecosystems.
+3. **Application Security** - Researching established security mechanisms such as formal verification, fuzz testing,
+   runtime monitoring, static analysis, and threat modeling, and building tools to implement these techniques at scale.
+
+### Our Approach
+
+At Three Dimensions Labs, we believe in an
+[open research model](https://www.reading.ac.uk/research/research-environment/open-research/open-research-details) that
+combines rigorous research with practical implementation. Our work spans from theoretical contributions to 
+production-ready code, with an emphasis on open-source contributions that benefit the entire blockchain ecosystem.
+
+We collaborate closely with industry partners, academic institutions, and the broader developer community to ensure our
+research addresses real-world challenges and creates meaningful impact.
 
 ### Current Projects
 
 Our lab is currently focused on several groundbreaking initiatives:
 
-- **ZK-Rollup Optimization Framework** - A toolkit for efficiently designing and deploying optimized zero-knowledge
-  rollups
-- **Quantum-Resistant Consensus Mechanisms** - Future-proofing blockchain technology against quantum computing threats
-- **Decentralized Identity Solutions** - Self-sovereign identity systems that preserve privacy while enabling verifiable
-  credentials
-- **Cross-Chain Interoperability Protocols** - Bridging disparate blockchain ecosystems through secure, efficient
-  message passing
+- **Jakson** - Jakson is a modular, event-driven security dev-sec-ops infrastructure for smart contracts. It allows
+  teams to integrate real-time code analysis, automated monitoring, and secure operational workflows into their smart
+  contracts development and deployment lifecycles.
 
-### Our Approach
-
-We believe in an open research model that combines rigorous academic inquiry with practical implementation. Our work
-spans from theoretical foundations to production-ready code, with an emphasis on open-source contributions that benefit
-the entire blockchain ecosystem.
-
-We collaborate closely with industry partners, academic institutions, and the broader developer community to ensure our
-research addresses real-world challenges and creates meaningful impact.
-
-### Join Our Team
+### Work With Us
 
 **We're seeking passionate researchers, engineers, and thought leaders to join our mission.** Whether you're a
 cryptographer, distributed systems engineer, economist, or security expert, we offer a collaborative environment to
 tackle the most challenging problems in the blockchain space.
 
-[View Open Positions →](https://example.org/careers)
+Interested in collaborating, supporting our research, or learning more about our work? Send us a message on
+[X](https://x.com/3DimensionsLabs) to start a conversation.
 
-### Recent Publications
+[//]: # ([View Open Positions →]&#40;https://example.org/careers&#41;)
 
-Our team regularly publishes research in top-tier academic conferences and industry journals. View
-our [publications page](/publications/) for our latest contributions to the field.
+[//]: # (### Recent Publications)
 
-### Connect With Us
+[//]: # ()
 
-Interested in collaborating, supporting our research, or learning more about our work? [Contact us](#) to start a
-conversation.
+[//]: # (Our team regularly publishes research in top-tier academic conferences and industry journals. View)
+
+[//]: # (our [publications page]&#40;/publications/&#41; for our latest contributions to the field.)
+
+[//]: # (### Connect With Us)
+
+[//]: # ()
+
+[//]: # (Interested in collaborating, supporting our research, or learning more about our work? [Contact us]&#40;#&#41; to start a)
+
+[//]: # (conversation.)
